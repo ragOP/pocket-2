@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import img from "./assets/sound_on.jpeg";
+import ProductOffer from "./ProductOffer";
 
 function App() {
+  const [timer, setTimer] = useState(false);
+  setTimeout(() => {
+    setTimer(true);
+  }, 600000)
   const videoUrl =
     "https://embed.wistia.com/deliveries/16d2f2843a3e43c08e3e4e4939a72866.bin";
   return (
@@ -38,6 +43,7 @@ function App() {
           </p>
         </div>
       </div>
+      {timer && <ProductOffer />}
       <hr style={{ border: "0.3 grey", width: "100%" }} />
       <footer className="flt">
         <div className="container b">
